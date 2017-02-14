@@ -13,14 +13,14 @@ class ViewController: UIViewController {
     
     var flag = false
     @IBAction func buttonPressed(_ sender: UIButton) {
-        if(!flag){
-            view.addHorizontalGradientLeft(UIColor.red, endingColor: UIColor.orange, animated: true)
-            flag = true
+        if(sender.isSelected == false){
+            sender.isSelected = true
+            view.addHorizontalGradientLeft(.red, endingColor: .orange, animated: true)
             view.bringSubview(toFront: sender)
         }
         else{
             view.deleteGradient(animated: true)
-            flag = false
+            sender.isSelected = false
         }
     }
 
