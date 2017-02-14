@@ -1,4 +1,3 @@
-
 //
 //  UIViewExtension.swift
 //  Gradienter
@@ -6,12 +5,9 @@
 //  Created by Tony Toussaint on 8/26/16.
 //  Copyright © 2016 Tony Toussaint. All rights reserved.
 //
-
 import UIKit
 
-
 extension UIView {
-    
     
     enum GradientType{
         
@@ -21,7 +17,6 @@ extension UIView {
         case bottomToTop
         case DiagonalLeftToRight
         case DiagonalRightToLeft
-        
     }
     
     func addGradient(beginingColor: UIColor, endingColor: UIColor, type: GradientType, animated: Bool){
@@ -31,8 +26,8 @@ extension UIView {
         var endY = 0.0
         switch type {
         case .leftToRight:
-             startX = 0.0
-             startY = 0.5
+            startX = 0.0
+            startY = 0.5
             endX = 1.0
             endY = 0.5
             
@@ -67,7 +62,7 @@ extension UIView {
             endY = 0.0
             
         }
-
+        
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
         gradient.colors = [beginingColor.cgColor, endingColor.cgColor]
@@ -80,9 +75,8 @@ extension UIView {
         else {
             self.layer.addSublayer(gradient)
         }
-        
     }
-
+    
     func deleteGradient(animated: Bool){
         
         if(animated){
@@ -91,18 +85,14 @@ extension UIView {
                     self.layer.sublayers?.remove(at: (self.layer.sublayers?.index(of: layers))!)
                 }
                 }
-
-            
             }, completion: nil)
         }
         else{
-        for layers in self.layer.sublayers! {
-            if(layers is CAGradientLayer){
-                self.layer.sublayers?.remove(at: (self.layer.sublayers?.index(of: layers))!)
+            for layers in self.layer.sublayers! {
+                if(layers is CAGradientLayer){
+                    self.layer.sublayers?.remove(at: (self.layer.sublayers?.index(of: layers))!)
+                }
             }
         }
-            
-        }
     }
-
 }
