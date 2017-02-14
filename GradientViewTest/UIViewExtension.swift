@@ -107,7 +107,6 @@ extension UIView {
         }
     }
     func deleteGradient(animated: Bool){
-       let a = self.layer.sublayers
         
         if(animated){
             UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve , animations: {for layers in self.layer.sublayers! {
