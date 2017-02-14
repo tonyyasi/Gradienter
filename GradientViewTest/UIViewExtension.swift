@@ -1,3 +1,4 @@
+
 //
 //  UIViewExtension.swift
 //  Gradienter
@@ -11,30 +12,30 @@ import UIKit
 
 extension UIView {
     
-    func addHorizontalGradientLeft(beginningColor: UIColor, endingColor: UIColor, animated: Bool) {
+    func addHorizontalGradientLeft(_ beginningColor: UIColor, endingColor: UIColor, animated: Bool) {
         
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
-        gradient.colors = [beginningColor.CGColor, endingColor.CGColor]
-        gradient.startPoint = CGPointMake(0.0, 0.5)
-        gradient.endPoint = CGPointMake(1, 0.5)
+        gradient.colors = [beginningColor.cgColor, endingColor.cgColor]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.5)
+        gradient.endPoint = CGPoint(x: 1, y: 0.5)
         if(animated){
-            UIView.transitionWithView(self, duration: 0.5, options: .TransitionCrossDissolve , animations: {self.layer.addSublayer(gradient)}, completion: nil)
+            UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve , animations: {self.layer.addSublayer(gradient)}, completion: nil)
         }
         else {
         self.layer.addSublayer(gradient)
         }
     }
     
-    func addHorizontalGradientRight(beginningColor: UIColor , endingColor: UIColor, animated: Bool) {
+    func addHorizontalGradientRight(_ beginningColor: UIColor , endingColor: UIColor, animated: Bool) {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
-        gradient.colors = [beginningColor.CGColor, endingColor.CGColor]
-        gradient.startPoint = CGPointMake(1, 0.5)
-        gradient.endPoint = CGPointMake(0, 0.5)
+        gradient.colors = [beginningColor.cgColor, endingColor.cgColor]
+        gradient.startPoint = CGPoint(x: 1, y: 0.5)
+        gradient.endPoint = CGPoint(x: 0, y: 0.5)
         if(animated){
             
-               UIView.transitionWithView(self, duration: 0.5, options: .TransitionCrossDissolve , animations: {self.layer.addSublayer(gradient)}, completion: nil)
+               UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve , animations: {self.layer.addSublayer(gradient)}, completion: nil)
             
         }
         else{
@@ -42,15 +43,15 @@ extension UIView {
         }
     }
     
-    func addVerticalGradientTop(beginningColor: UIColor , endingColor: UIColor, animated: Bool){
+    func addVerticalGradientTop(_ beginningColor: UIColor , endingColor: UIColor, animated: Bool){
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
-        gradient.colors = [beginningColor.CGColor, endingColor.CGColor]
-        gradient.startPoint = CGPointMake(0.5, 0.0)
-        gradient.endPoint = CGPointMake(0.5, 1)
+        gradient.colors = [beginningColor.cgColor, endingColor.cgColor]
+        gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradient.endPoint = CGPoint(x: 0.5, y: 1)
         if(animated){
             
-            UIView.transitionWithView(self, duration: 0.5, options: .TransitionCrossDissolve , animations: {self.layer.addSublayer(gradient)}, completion: nil)
+            UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve , animations: {self.layer.addSublayer(gradient)}, completion: nil)
             
         }
         else{
@@ -58,15 +59,15 @@ extension UIView {
         }
     }
     
-    func addVerticalGradientBottom(beginningColor: UIColor , endingColor: UIColor, animated: Bool){
+    func addVerticalGradientBottom(_ beginningColor: UIColor , endingColor: UIColor, animated: Bool){
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
-        gradient.colors = [beginningColor.CGColor, endingColor.CGColor]
-        gradient.startPoint = CGPointMake(0.5, 1)
-        gradient.endPoint = CGPointMake(0.5, 0.0)
+        gradient.colors = [beginningColor.cgColor, endingColor.cgColor]
+        gradient.startPoint = CGPoint(x: 0.5, y: 1)
+        gradient.endPoint = CGPoint(x: 0.5, y: 0.0)
         if(animated){
             
-            UIView.transitionWithView(self, duration: 0.5, options: .TransitionCrossDissolve , animations: {self.layer.addSublayer(gradient)}, completion: nil)
+            UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve , animations: {self.layer.addSublayer(gradient)}, completion: nil)
             
         }
         else{
@@ -74,15 +75,15 @@ extension UIView {
         }
     }
     
-    func addDiagonalGradientLeft(beginningColor: UIColor , endingColor: UIColor, animated: Bool){
+    func addDiagonalGradientLeft(_ beginningColor: UIColor , endingColor: UIColor, animated: Bool){
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
-        gradient.colors = [beginningColor.CGColor, endingColor.CGColor]
-        gradient.startPoint = CGPointMake(0.0, 0.0)
-        gradient.endPoint = CGPointMake(1, 1)
+        gradient.colors = [beginningColor.cgColor, endingColor.cgColor]
+        gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradient.endPoint = CGPoint(x: 1, y: 1)
         if(animated){
             
-            UIView.transitionWithView(self, duration: 0.5, options: .TransitionCrossDissolve , animations: {self.layer.addSublayer(gradient)}, completion: nil)
+            UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve , animations: {self.layer.addSublayer(gradient)}, completion: nil)
             
         }
         else{
@@ -90,19 +91,42 @@ extension UIView {
         }
     }
     
-    func addDiagonalGradientRight(beginningColor: UIColor , endingColor: UIColor, animated: Bool){
+    func addDiagonalGradientRight(_ beginningColor: UIColor , endingColor: UIColor, animated: Bool){
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
-        gradient.colors = [beginningColor.CGColor, endingColor.CGColor]
-        gradient.startPoint = CGPointMake(1, 0.0)
-        gradient.endPoint = CGPointMake(0.0, 1)
+        gradient.colors = [beginningColor.cgColor, endingColor.cgColor]
+        gradient.startPoint = CGPoint(x: 1, y: 0.0)
+        gradient.endPoint = CGPoint(x: 0.0, y: 1)
         if(animated){
             
-            UIView.transitionWithView(self, duration: 0.5, options: .TransitionCrossDissolve , animations: {self.layer.addSublayer(gradient)}, completion: nil)
+            UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve , animations: {self.layer.addSublayer(gradient)}, completion: nil)
             
         }
         else{
             self.layer.addSublayer(gradient)
         }
     }
+    func deleteGradient(animated: Bool){
+       let a = self.layer.sublayers
+        
+        if(animated){
+            UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve , animations: {for layers in self.layer.sublayers! {
+                if(layers is CAGradientLayer){
+                    self.layer.sublayers?.remove(at: (self.layer.sublayers?.index(of: layers))!)
+                }
+                }
+
+            
+            }, completion: nil)
+        }
+        else{
+        for layers in self.layer.sublayers! {
+            if(layers is CAGradientLayer){
+                self.layer.sublayers?.remove(at: (self.layer.sublayers?.index(of: layers))!)
+            }
+        }
+            
+        }
+    }
+
 }

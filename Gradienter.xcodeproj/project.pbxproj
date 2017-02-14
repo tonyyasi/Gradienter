@@ -100,6 +100,7 @@
 					AFED626B1D70D4EA0047FFE5 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = H89LF25P69;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -258,6 +259,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tony.Gradienter;
 				PRODUCT_NAME = Gradienter;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -269,6 +271,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tony.Gradienter;
 				PRODUCT_NAME = Gradienter;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

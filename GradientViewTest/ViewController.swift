@@ -9,9 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBAction func buttonPressed(sender: UIButton) {
-        
-        view.addHorizontalGradientRight(UIColor.redColor(), endingColor: UIColor.orangeColor(), animated: true)
+    
+    
+    var flag = false
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        if(!flag){
+            view.addHorizontalGradientLeft(UIColor.red, endingColor: UIColor.orange, animated: true)
+            flag = true
+            view.bringSubview(toFront: sender)
+        }
+        else{
+            view.deleteGradient(animated: true)
+            flag = false
+        }
     }
 
     override func viewDidLoad() {
