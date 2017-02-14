@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         if(sender.isSelected == false){
             sender.isSelected = true
             view.addGradient(beginingColor: .red, endingColor: .orange, type: .DiagonalLeftToRight, animated: true)
-            view.bringSubview(toFront: sender)
+          
         }
         else{
             view.deleteGradient(animated: true)

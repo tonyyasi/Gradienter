@@ -73,13 +73,14 @@ extension UIView {
         gradient.colors = [beginingColor.cgColor, endingColor.cgColor]
         gradient.startPoint = CGPoint(x: startX, y: startY)
         gradient.endPoint = CGPoint(x: endX, y: endY)
+        gradient.zPosition = -1
         if(animated){
             UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve , animations: {self.layer.addSublayer(gradient)}, completion: nil)
         }
         else {
             self.layer.addSublayer(gradient)
         }
-
+        
     }
 
     func deleteGradient(animated: Bool){
