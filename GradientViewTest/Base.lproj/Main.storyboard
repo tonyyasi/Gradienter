@@ -21,18 +21,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AR2-pI-uXN">
-                                <rect key="frame" x="137" y="269" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FtU-pJ-nq7"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1fE-vo-oT0">
+                                <rect key="frame" x="46.5" y="488" width="227" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pnq-Tl-neh">
+                                        <rect key="frame" x="0.0" y="0.0" width="227" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AR2-pI-uXN">
+                                                <rect key="frame" x="0.0" y="0.0" width="69" height="30"/>
+                                                <state key="normal" title="Left"/>
+                                                <connections>
+                                                    <action selector="leftButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jwa-Qp-UoD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xH-eu-7EF">
+                                                <rect key="frame" x="79" y="0.0" width="69" height="30"/>
+                                                <state key="normal" title="Top"/>
+                                                <connections>
+                                                    <action selector="topButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jAP-Xj-tqQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ttx-3v-3WG">
+                                                <rect key="frame" x="158" y="0.0" width="69" height="30"/>
+                                                <state key="normal" title="Right"/>
+                                                <connections>
+                                                    <action selector="rightButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WzL-tN-8Dt"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lpf-JI-kdz">
+                                        <rect key="frame" x="0.0" y="30" width="227" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmn-R7-c46">
+                                                <rect key="frame" x="0.0" y="0.0" width="69" height="30"/>
+                                                <state key="normal" title="Bottom"/>
+                                                <connections>
+                                                    <action selector="bottomButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nDi-IQ-5JI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oX4-AF-Jye">
+                                                <rect key="frame" x="79" y="0.0" width="69" height="30"/>
+                                                <state key="normal" title="Diagonal1"/>
+                                                <connections>
+                                                    <action selector="diagonal1ButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LFZ-Nt-vPI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gt2-l1-i8Y">
+                                                <rect key="frame" x="158" y="0.0" width="69" height="30"/>
+                                                <state key="normal" title="Diagonal2"/>
+                                                <connections>
+                                                    <action selector="diagonal2ButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fvd-1M-SU1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Lpf-JI-kdz" firstAttribute="width" secondItem="pnq-Tl-neh" secondAttribute="width" id="7VN-r2-HbB"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="AR2-pI-uXN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AVJ-zE-XjO"/>
-                            <constraint firstItem="AR2-pI-uXN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e17-2J-uLJ"/>
+                            <constraint firstItem="1fE-vo-oT0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R5r-26-pzk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1fE-vo-oT0" secondAttribute="bottom" constant="20" id="qQ2-3M-MGf"/>
                         </constraints>
                     </view>
                 </viewController>
