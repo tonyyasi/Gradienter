@@ -30,7 +30,6 @@ class ViewController: UIViewController {
             sender.isSelected = false
             view.deleteGradient(animated: true)
         }
-
     }
     
     @IBAction func rightButtonPressed(_ sender: UIButton) {
@@ -42,8 +41,8 @@ class ViewController: UIViewController {
             sender.isSelected = false
             view.deleteGradient(animated: true)
         }
-
     }
+    
     @IBAction func bottomButtonPressed(_ sender: UIButton) {
         if(!sender.isSelected){
             sender.isSelected = true
@@ -53,8 +52,8 @@ class ViewController: UIViewController {
             sender.isSelected = false
             view.deleteGradient(animated: true)
         }
-
     }
+    
     @IBAction func diagonal1ButtonPressed(_ sender: UIButton) {
         if(!sender.isSelected){
             sender.isSelected = true
@@ -64,7 +63,6 @@ class ViewController: UIViewController {
             sender.isSelected = false
             view.deleteGradient(animated: true)
         }
-
     }
     
     @IBAction func diagonal2ButtonPressed(_ sender: UIButton) {
@@ -76,14 +74,10 @@ class ViewController: UIViewController {
             sender.isSelected = false
             view.deleteGradient(animated: true)
         }
-
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -91,7 +85,4 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-
