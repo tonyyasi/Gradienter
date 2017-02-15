@@ -77,6 +77,10 @@ extension UIView {
         }
     }
     
+    func addGradientWithMultipleColors(colors: [CGColor], type: GradientType, animated: Bool){
+        // Maybe add the posibility to add a gradient of more then one color
+    }
+    
     func deleteGradient(animated: Bool){
         
         if(animated){
