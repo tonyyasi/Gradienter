@@ -15,59 +15,34 @@ extension UIView {
         case rightToLeft
         case topToBottom
         case bottomToTop
-        case DiagonalLeftToRight
-        case DiagonalRightToLeft
+        case diagonalLeftToRight
+        case diagonalRightToLeft
+        
+        var points: (startX : Double, startY: Double, endX: Double, endY: Double) {
+            switch self{
+            case .leftToRight:
+                return(0.0,0.5,1.0,0.5)
+            case .bottomToTop:
+                 return(0.5,1.0,0.5,0.0)
+            case .diagonalLeftToRight:
+                 return(0.0,0.0,1.0,1.0)
+            case .diagonalRightToLeft:
+                 return(1.0,1.0,0.0,0.0)
+            case .rightToLeft:
+                 return(1.0,0.5,0.0,0.5)
+            case .topToBottom:
+                 return(0.5,0.0,0.5,1.0)
+            }
+        }
     }
     
     func addGradient(beginingColor: UIColor, endingColor: UIColor, type: GradientType, animated: Bool){
-        var startX = 0.0
-        var startY = 0.0
-        var endX = 0.0
-        var endY = 0.0
-        switch type {
-        case .leftToRight:
-            startX = 0.0
-            startY = 0.5
-            endX = 1.0
-            endY = 0.5
-            
-        case .rightToLeft:
-            startX = 1.0
-            startY = 0.5
-            endX = 0.0
-            endY = 0.5
-            
-        case .topToBottom:
-            startX = 0.5
-            startY = 0.0
-            endX = 0.5
-            endY = 1.0
-            
-        case .bottomToTop:
-            startX = 0.5
-            startY = 1.0
-            endX = 0.5
-            endY = 0.0
-            
-        case .DiagonalLeftToRight:
-            startX = 0.0
-            startY = 0.0
-            endX = 1.0
-            endY = 1.0
-            
-        case .DiagonalRightToLeft:
-            startX = 1.0
-            startY = 1.0
-            endX = 0.0
-            endY = 0.0
-            
-        }
         
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
         gradient.colors = [beginingColor.cgColor, endingColor.cgColor]
-        gradient.startPoint = CGPoint(x: startX, y: startY)
-        gradient.endPoint = CGPoint(x: endX, y: endY)
+        gradient.startPoint = CGPoint(x: type.points.startX, y: type.points.startY)
+        gradient.endPoint = CGPoint(x: type.points.endX, y: type.points.endY)
         gradient.zPosition = -1
         if(animated){
             UIView.transition(with: self, duration: 0.5, options: .transitionCrossDissolve , animations: {self.layer.addSublayer(gradient)}, completion: nil)
