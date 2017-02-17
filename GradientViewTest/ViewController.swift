@@ -57,7 +57,7 @@ class ViewController: UIViewController {
     @IBAction func diagonal1ButtonPressed(_ sender: UIButton) {
         if(!sender.isSelected){
             sender.isSelected = true
-            view.addGradient(beginingColor: .blue, endingColor: .yellow, type: .DiagonalLeftToRight, animated: true)
+            view.addGradient(beginingColor: .blue, endingColor: .yellow, type: .diagonalLeftToRight, animated: true)
         }
         else{
             sender.isSelected = false
@@ -68,7 +68,7 @@ class ViewController: UIViewController {
     @IBAction func diagonal2ButtonPressed(_ sender: UIButton) {
         if(!sender.isSelected){
             sender.isSelected = true
-            view.addGradient(beginingColor: .blue, endingColor: .yellow, type: .DiagonalRightToLeft, animated: true)
+            view.addGradient(beginingColor: .blue, endingColor: .yellow, type: .diagonalRightToLeft, animated: true)
         }
         else{
             sender.isSelected = false
